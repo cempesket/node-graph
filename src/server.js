@@ -2,14 +2,15 @@ const {GraphQLServer} = require('graphql-yoga');
 
 const context = require('./context/context');
 const mutation = require('./resolvers/Mutation');
-const {getInfo, getFeed, getVotes, getLink} = require('./resolvers/Query');
+const {getInfo, getFeed, getVotes, getLink,count} = require('./resolvers/Query');
 const {user} = require('./resolvers/AuthPayload');
 
 const resolvers = {
     Query: {
         info: getInfo,
         feed: getFeed,
-        votes: getVotes
+        votes: getVotes,
+        count: count
     },
     Mutation: mutation,
 
@@ -21,7 +22,8 @@ const resolvers = {
     },
     Vote: {
         link: getLink
-    }
+    },
+
 
 };
 

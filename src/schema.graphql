@@ -3,6 +3,7 @@ type Query {
     feed(filter:String, orderBy: VoteOrderByInput,skip: Int, first: Int): [Link!]!
     votes: [Vote]!
     link: Link
+    count: Int
 }
 
 type Mutation {

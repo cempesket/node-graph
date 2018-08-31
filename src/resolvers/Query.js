@@ -36,7 +36,9 @@ const count = async (root, args, context, info) => {
         count
       }
     } `;
-    return await context.db.query.linksConnection({}, countSelectionSet, info)
+    const data = await context.db.query.linksConnection({}, countSelectionSet, info);
+
+    return data.aggregate.count
 
 };
 
