@@ -1,0 +1,5 @@
+node_modules/
+.idea/
+src/generated/
+src/export
+src/\.export/
